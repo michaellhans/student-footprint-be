@@ -1,4 +1,4 @@
-# Resume Classification
+# Student Carbon Footprint Back End
 
 Resume Classification API to classify resumes and show some suggestions based on the job description.
 
@@ -35,4 +35,3 @@ pip install -r requirements.txt
 ## Authors
 
 - 23522011 / Michael Hans
-- 23522008 / Neng Ayu Herawati
