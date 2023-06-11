@@ -1,0 +1,174 @@
+course_id,course_name,exam_paper_based,class_electronic
+IF1210,Dasar Pemrograman,True,True
+IF2110,Algoritma & Struktur Data,False,False
+IF2111,Algoritma dan Struktur Data STI,False,True
+IF2112,Pemrograman Komputer,True,False
+IF2120,Matematika Diskrit,True,False
+IF2121,Logika Komputasional,True,False
+IF2123,Aljabar Linier dan Geometri,False,False
+IF2124,Teori Bahasa Formal dan Otomata,False,False
+IF2130,Organisasi dan Arsitektur Komputer,True,False
+IF2140,Pemodelan Basis Data,True,True
+IF2210,Pemrograman Berorientasi Objek,False,True
+IF2211,Strategi Algoritma,False,False
+IF2212,Pemrograman Berorientasi Objek STI,False,True
+IF2220,Probabilitas dan Statistika,False,True
+IF2230,Sistem Operasi,True,False
+IF2240,Basis Data,True,True
+IF2250,Rekayasa Perangkat Lunak,True,True
+IF3110,Pengembangan Aplikasi Berbasis Web,False,True
+IF3130,Jaringan Komputer,False,True
+IF3140,Manajemen Basis Data,True,True
+IF3141,Sistem Informasi,True,False
+IF3150,Manajemen Proyek Perangkat Lunak,True,False
+IF3151,Interaksi Manusia Komputer,False,True
+IF3152,Rekayasa Perangkat Lunak STI,False,True
+IF3170,Inteligensi Buatan,True,False
+IF3210,Pengembangan Aplikasi pada Platform Khusus,False,True
+IF3230,Sistem Paralel dan Terdistribusi,True,True
+IF3250,Proyek Perangkat Lunak,True,True
+IF3260,Grafika Komputer,False,True
+IF3270,Pembelajaran Mesin,False,True
+IF3280,Socio-informatika dan Profesionalisme,False,True
+IF4020,Kriptografi,False,True
+IF4021,Pemodelan dan Simulasi,True,False
+IF4031,Pengembangan Aplikasi Terdistribusi,False,False
+IF4033,Keamanan dan Penjaminan Informasi,False,True
+IF4040,Pemodelan Data Lanjut,True,False
+IF4041,Ilmu Data dan Penggalian Data,False,True
+IF4042,Sistem Temu Balik Informasi,True,True
+IF4043,Sistem Informasi Lanjut,True,False
+IF4044,Teknologi Big Data,True,False
+IF4051,Pengembangan Sistem IoT,False,False
+IF4052,Komputasi Layanan,False,True
+IF4061,Visualisasi Data dan Informasi,False,True
+IF4070,Representasi Pengetahuan dan Penalaran,False,True
+IF4071,Pemrosesan Ucapan,False,False
+IF4072,Pemrosesan Bahasa Alami,True,False
+IF4073,Interpretasi dan Pengolahan Citra,False,False
+IF4074,Pembelajaran Mesin Lanjut,False,True
+IF4090,Kerja Praktek,True,False
+IF4091,Tugas Akhir 1 dan Seminar,True,False
+IF4092,Tugas Akhir 2,True,True
+IF4150,Rekayasa Perangkat Lunak Spesifik Domain,True,False
+IF5010,Sistem & Arsitektur Komputer A,True,True
+IF5011,Sistem & Arsitektur Komputer B,True,True
+IF5020,Algoritma & Pemrograman A,True,False
+IF5021,Algoritma & Pemrograman B,True,True
+IF5030,Manajemen Informasi A,True,True
+IF5031,Manajemen Informasi B,True,True
+IF5091,Pelaksanaan Penelitian 1,True,False
+IF5092,Pelaksanaan Penelitian 2,True,False
+IF5099,Metodologi Penelitian,False,True
+IF5099,Metodologi Penelitian/Tesis 1,False,True
+IF5100,Pemrograman untuk Data Analitik,False,True
+IF5120,Rekayasa Kebutuhan Sistem & Perangkat Lunak,True,True
+IF5120,Konsep Rekayasa Perangkat Lunak dan Penerapannya,True,True
+IF5121,Analisis & Perancangan Perangkat Lunak,True,False
+IF5121,Pengembangan Berbasis Komponen dan Berbasis Pola,True,False
+IF5122,Pembangunan Perangkat Lunak,True,False
+IF5123,Kualitas Perangkat Lunak,True,False
+IF5124,Evolusi Perangkat Lunak,True,False
+IF5130,Strategi Dijital,False,True
+IF5130,Kerekayasaan Enterprise,False,True
+IF5131,Pendekatan Sistem,True,True
+IF5131,Pemodelan Enterprise,True,True
+IF5132,Keberlanjutan Sistem Informasi,False,True
+IF5132,Manajemen Resiko Enterprise,False,True
+IF5133,Manajemen Proyek Sistem Informasi,True,False
+IF5134,Sumber Daya Informasi Enterprise,True,False
+IF5135,Tatakelola Enterprise,True,False
+IF5140,Perancangan Arsitektur Enterprise,False,False
+IF5141,Manajemen Keamanan Informasi,True,False
+IF5142,Nilai & Resiko Teknologi Informasi,False,False
+IF5143,Riset & Inovasi Teknologi Informasi,True,True
+IF5144,Jaringan Informasi & Sosial,False,False
+IF5145,Manajemen Pengembangan Aplikasi,True,False
+IF5150,Rekayasa Perangkat Lunak untuk Domain Game,True,False
+IF5151,"Desain Interaksi,Visualisasi, dan Game",True,False
+IF5152,Pemrosesan dan Manajemen Data Multimedia,False,True
+IF5152,Pengembangan Aplikasi Piranti Bergerak,False,True
+IF5153,Pemrosesan dan Manajemen Data Multimedia,True,False
+IF5154,Pengembangan Aplikasi Media Interaktif dan Praktek,True,False
+IF5170,Pemodelan dan Pengelolaan Data,False,False
+IF5170,Visualisasi Data,False,False
+IF5171,Pembelajaran Mesin DSAI,False,True
+IF5171,Fundamental Intelijen Bisnis,False,True
+IF5172,Datawarehouse & Data Mining,True,True
+IF5173,Teori Manajemen & Organisasi,True,False
+IF5174,Pengembangan Intelijen Bisnis & Operasi,True,False
+IF5175,Analisis Data & Bisnis,True,False
+IF5180,Inteligensi Buatan Lanjut,False,False
+IF5181,Pengenalan Pola,True,False
+IF5182,Representasi & Penalaran Pengetahuan,True,False
+IF5200,Proyek Penelitian Terapan,False,True
+IF5220,Kualitas Perangkat Lunak dan Verifikasi Formal,False,True
+IF5221,Inovasi Produk Perangkat Lunak,False,True
+IF5230,Aplikasi Inteligensi Buatan untuk Enterprise,False,True
+IF5241,Manajemen Keamanan Informasi,True,False
+IF5242,Jaringan Informasi & Sosial,True,True
+IF5243,Manajemen Pengembangan Aplikasi,True,True
+IF5250,Pengembangan Aplikasi Piranti Bergerak,False,True
+IF5252,Teknologi Lanjut Media dan Piranti Bergerak,True,True
+IF5270,Sistem Big Data,True,True
+IF5271,Intelijen Bisnis dan Analitik,True,True
+IF5280,Representasi dan Penalaran Pengetahuan,False,True
+IF5281,Deep Learning,False,True
+IF6010,Sistem Operasi Lanjut,True,False
+IF6011,Sistem Terdistribusi Lanjut,True,False
+IF6036,Strategi & Kebijakan Teknologi Informasi,True,False
+IF6046,Manajemen Resiko Teknologi Informasi,False,True
+IF6047,Sistem Layanan Cerdas,True,False
+IF6048,Pembelajaran Multimedia,True,False
+IF6049,Kewirausahaan Bidang Teknologi Informasi,False,True
+IF6080,Pembelajaran Mesin Probabilistik,True,False
+IF6081,Pemrosesan Suara Lanjut,True,False
+IF6082,Pemrosesan Bahasa Alami Lanjut,True,False
+IF6083,Vision,True,False
+IF6090,Penulisan Jurnal  Internasional,True,False
+IF6091,Kerja Praktek Industri,True,False
+IF6093,Studi Mandiri A,False,True
+IF6094,Studi Mandiri B,True,False
+IF6099,Tesis,False,True
+IF6125,Manajemen Rekayasa Perangkat Lunak,True,False
+IF6130,Tata Pamong Data,True,False
+IF6170,Visualisasi dan Narasi Data,True,True
+II1101,Komputasi dan Masyarakat,True,False
+II2110,Matematika STI,True,False
+II2111,Probabilitas dan Statistik,False,False
+II2130,Sistem dan Arsitektur Komputer,True,True
+II2220,Manajemen Sumber Daya STI,True,True
+II2221,Manajemen Proyek STI,False,True
+II2230,Jaringan Komputer,False,True
+II2240,Analisis Kebutuhan Sistem,False,True
+II2250,Manajemen Basis Data,True,True
+II2260,Sistem Embedded,False,True
+II3120,Layanan Sistem dan Teknologi Informasi,False,True
+II3121,Analisis Kebutuhan Enterprise,False,True
+II3131,Interaksi Manusia Komputer,False,True
+II3150,Sistem Multimedia,False,True
+II3160,Teknologi Sistem Terintegrasi,False,True
+II3220,Arsitektur Enterprise,False,True
+II3230,Keamanan Informasi,False,True
+II3240,Rekayasa Sistem dan Teknologi Informasi,False,True
+II3260,Platform dan Pengembangan Aplikasi Mobile,False,True
+II4021,Sistem Pendukung Pengambilan Keputusan,True,False
+II4022,Audit Teknologi Informasi,False,False
+II4031,Kriptografi dan Koding,False,True
+II4032,Analisis & Perancangan Kinerja Sistem,False,False
+II4033,Forensik Digital,False,True
+II4034,Pemrosesan Bahasa Alami dan Ucapan,True,False
+II4035,Sistem Cerdas,False,True
+II4037,Internet of Things,True,False
+II4038,Teknologi Komputasi Awan,False,True
+II4039,Manajemen Produk,True,False
+II4042,Kecerdasan Buatan untuk Bisnis,True,False
+II4051,Rekayasa Sistem Multimedia,False,True
+II4062,Data Warehouse & Business Intelligence,True,False
+II4071,Keprofesian STI,True,False
+II4090,Kerja Praktek,True,False
+II4091,Tugas Akhir 1 & Seminar,True,False
+II4092,Tugas Akhir 2,True,False
+II4370,Hukum & Etika Teknologi Informasi,False,False
+II4371,Kapita Selekta STI,False,False
+II4472,Komunikasi Interpersonal,False,True

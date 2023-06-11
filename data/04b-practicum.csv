@@ -1,0 +1,176 @@
+,major,year,semester,course_id,course_name,day,date,start_time,end_time,location,activity,is_online,counts
+0,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-08-26,11:00,13:00,-,Praktikum,Online,176
+1,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-09-02,11:00,13:00,-,Praktikum,Online,176
+2,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-09-09,11:00,13:00,-,Praktikum,Online,176
+3,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-09-16,11:00,13:00,-,Praktikum,Online,176
+4,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-09-23,11:00,13:00,-,Praktikum,Online,176
+5,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-09-30,11:00,13:00,-,Praktikum,Online,176
+6,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-10-07,11:00,13:00,-,Praktikum,Online,176
+7,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-10-14,11:00,13:00,-,Praktikum,Online,176
+8,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-10-21,11:00,13:00,-,Praktikum,Online,176
+9,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-10-28,11:00,13:00,-,Praktikum,Online,176
+10,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-11-04,11:00,13:00,-,Praktikum,Online,176
+11,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-11-11,11:00,13:00,-,Praktikum,Online,176
+12,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-11-18,11:00,13:00,-,Praktikum,Online,176
+13,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-11-25,11:00,13:00,-,Praktikum,Online,176
+14,IF,2021,1,IF2110,Algoritma & Struktur Data,Kamis,2021-12-02,11:00,13:00,-,Praktikum,Online,176
+15,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-08-26,11:00,13:00,-,Praktikum,Online,116
+16,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-09-02,11:00,13:00,-,Praktikum,Online,116
+17,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-09-09,11:00,13:00,-,Praktikum,Online,116
+18,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-09-16,11:00,13:00,-,Praktikum,Online,116
+19,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-09-23,11:00,13:00,-,Praktikum,Online,116
+20,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-09-30,11:00,13:00,-,Praktikum,Online,116
+21,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-10-14,11:00,13:00,-,Praktikum,Online,116
+22,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-10-21,11:00,13:00,-,Praktikum,Online,116
+23,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-10-28,11:00,13:00,-,Praktikum,Online,116
+24,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-11-04,11:00,13:00,-,Praktikum,Online,116
+25,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-11-11,11:00,13:00,-,Praktikum,Online,116
+26,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-11-18,11:00,13:00,-,Praktikum,Online,116
+27,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-11-25,11:00,13:00,-,Praktikum,Online,116
+28,STI,2021,1,IF2111,Algoritma & Struktur Data STI,Kamis,2021-12-02,11:00,13:00,-,Praktikum,Online,116
+29,STI,2021,1,IF2140,Pemodelan Basis Data,Kamis,2021-09-30,13:00,15:00,-,Praktikum,Online,119
+30,STI,2021,1,IF2140,Pemodelan Basis Data,Kamis,2021-10-14,13:00,15:00,-,Praktikum,Online,119
+31,STI,2021,1,IF2140,Pemodelan Basis Data,Kamis,2021-10-21,13:00,15:00,-,Praktikum,Online,119
+32,STI,2021,1,IF2140,Pemodelan Basis Data,Kamis,2021-10-28,13:00,15:00,-,Praktikum,Online,119
+33,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-01-20,11:00,13:00,-,Praktikum,Online,171
+34,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-01-27,11:00,13:00,-,Praktikum,Online,171
+35,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-02-03,11:00,13:00,-,Praktikum,Online,171
+36,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-02-10,11:00,13:00,-,Praktikum,Online,171
+37,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-02-17,11:00,13:00,-,Praktikum,Online,171
+38,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-02-24,11:00,13:00,-,Praktikum,Online,171
+39,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-03-03,11:00,13:00,-,Praktikum,Online,171
+40,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-03-10,11:00,13:00,-,Praktikum,Online,171
+41,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-03-17,11:00,13:00,-,Praktikum,Online,171
+42,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-03-24,11:00,13:00,-,Praktikum,Online,171
+43,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-03-31,11:00,13:00,-,Praktikum,Online,171
+44,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-04-07,11:00,13:00,-,Praktikum,Online,171
+45,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-04-14,11:00,13:00,-,Praktikum,Online,171
+46,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-04-21,11:00,13:00,-,Praktikum,Online,171
+47,IF,2021,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2022-04-28,11:00,13:00,-,Praktikum,Online,171
+48,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-01-20,10:00,12:00,-,Praktikum,Online,120
+49,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-01-27,10:00,12:00,-,Praktikum,Online,120
+50,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-02-03,10:00,12:00,-,Praktikum,Online,120
+51,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-02-10,10:00,12:00,-,Praktikum,Online,120
+52,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-02-17,10:00,12:00,-,Praktikum,Online,120
+53,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-02-24,10:00,12:00,-,Praktikum,Online,120
+54,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-03-03,10:00,12:00,-,Praktikum,Online,120
+55,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-03-10,10:00,12:00,-,Praktikum,Online,120
+56,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-03-17,10:00,12:00,-,Praktikum,Online,120
+57,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-03-24,10:00,12:00,-,Praktikum,Online,120
+58,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-03-31,10:00,12:00,-,Praktikum,Online,120
+59,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-04-07,10:00,12:00,-,Praktikum,Online,120
+60,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-04-14,10:00,12:00,-,Praktikum,Online,120
+61,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-04-21,10:00,12:00,-,Praktikum,Online,120
+62,STI,2021,2,IF2212,Pemrograman Berorientasi Objek STI,Kamis,2022-04-28,10:00,12:00,-,Praktikum,Online,120
+63,IF,2021,2,IF2240,Basis Data,Jumat,2022-02-04,16:00,18:00,-,Praktikum,Online,185
+64,IF,2021,2,IF2240,Basis Data,Jumat,2022-02-11,16:00,18:00,-,Praktikum,Online,185
+65,IF,2021,2,IF2240,Basis Data,Jumat,2022-02-18,16:00,18:00,-,Praktikum,Online,185
+66,IF,2021,2,IF2240,Basis Data,Jumat,2022-02-25,16:00,18:00,-,Praktikum,Online,185
+67,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-08-27,15:00,17:00,-,Praktikum,Online,90
+68,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-09-03,15:00,17:00,-,Praktikum,Online,90
+69,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-09-10,15:00,17:00,-,Praktikum,Online,90
+70,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-09-17,15:00,17:00,-,Praktikum,Online,90
+71,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-09-24,15:00,17:00,-,Praktikum,Online,90
+72,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-10-01,15:00,17:00,-,Praktikum,Online,90
+73,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-10-08,15:00,17:00,-,Praktikum,Online,90
+74,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-10-15,15:00,17:00,-,Praktikum,Online,90
+75,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-10-22,15:00,17:00,-,Praktikum,Online,90
+76,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-10-29,15:00,17:00,-,Praktikum,Online,90
+77,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-11-05,15:00,17:00,-,Praktikum,Online,90
+78,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-11-12,15:00,17:00,-,Praktikum,Online,90
+79,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-11-19,15:00,17:00,-,Praktikum,Online,90
+80,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-11-26,15:00,17:00,-,Praktikum,Online,90
+81,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-12-03,15:00,17:00,-,Praktikum,Online,90
+82,MIF,2021,1,IF5021,Algoritma & Pemrograman B,Jumat,2021-12-10,15:00,17:00,-,Praktikum,Online,90
+83,STI,2021,2,II2250,Manajemen Basis Data,Senin,2022-04-18,10:18,12:18,-,Praktikum,Online,124
+84,STI,2021,2,II2250,Manajemen Basis Data,Kamis,2022-04-28,10:00,12:00,-,Praktikum,Online,124
+85,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-08-25,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+86,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-09-01,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+87,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-09-08,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+88,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-09-15,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+89,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-09-22,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+90,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-09-29,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+91,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-10-06,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+92,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-10-13,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+93,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-10-20,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+94,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-10-27,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+95,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-11-03,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+96,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-11-10,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+97,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-11-17,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+98,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-11-24,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+99,IF,2022,1,IF2110,Algoritma & Struktur Data,Kamis,2022-12-01,11:00,13:00,Labdas,Praktikum,Tatap Muka,164
+100,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-08-22,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+101,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-08-29,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+102,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-09-05,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+103,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-09-12,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+104,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-09-19,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+105,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-09-26,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+106,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-10-03,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+107,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-10-17,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+108,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-10-24,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+109,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-10-31,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+110,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-11-07,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+111,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-11-14,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+112,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-11-21,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+113,STI,2022,1,IF2111,Algoritma & Struktur Data STI,Senin,2022-11-28,09:00,11:00,Labdas,Praktikum,Tatap Muka,173
+114,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-09-23,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+115,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-09-30,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+116,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-10-07,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+117,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-10-14,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+118,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-10-21,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+119,STI,2022,1,IF2140,Pemodelan Basis Data,Jumat,2022-10-28,07:00,09:00,Labdas,Praktikum,Tatap Muka,173
+120,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-01-19,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+121,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-01-26,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+122,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-02-02,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+123,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-02-09,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+124,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-02-16,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+125,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-02-23,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+126,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-03-02,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+127,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-03-09,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+128,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-03-16,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+129,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-03-23,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+130,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-03-30,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+131,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-04-06,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+132,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-04-13,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+133,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-04-20,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+134,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-04-27,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+135,IF,2022,2,IF2210,Pemrograman Berorientasi Objek,Kamis,2023-05-04,11:00,13:00,Labdas,Praktikum,Tatap Muka,159
+136,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-01-17,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+137,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-01-24,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+138,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-01-31,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+139,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-02-07,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+140,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-02-14,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+141,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-02-21,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+142,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-02-28,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+143,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-03-07,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+144,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-03-14,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+145,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-03-21,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+146,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-03-28,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+147,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-04-04,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+148,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-04-11,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+149,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-04-18,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+150,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-04-25,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+151,STI,2022,2,IF2212,Pemrograman Berorientasi Objek STI,Selasa,2023-05-02,09:00,11:00,Labdas,Praktikum,Tatap Muka,171
+152,IF,2022,2,IF2240,Basis Data,Senin,2023-02-13,13:00,15:00,Labdas,Praktikum,Tatap Muka,171
+153,IF,2022,2,IF2240,Basis Data,Senin,2023-02-20,13:00,15:00,Labdas,Praktikum,Tatap Muka,171
+154,IF,2022,2,IF2240,Basis Data,Senin,2023-02-27,13:00,15:00,Labdas,Praktikum,Tatap Muka,171
+155,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-08-25,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+156,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-09-01,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+157,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-09-08,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+158,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-09-15,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+159,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-09-22,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+160,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-09-29,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+161,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-10-13,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+162,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-10-20,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+163,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-10-27,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+164,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-11-03,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+165,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-11-10,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+166,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-11-17,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+167,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-11-24,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+168,MIF,2022,1,IF5100,Pemrograman untuk Data Analitik,Kamis,2022-12-01,15:00,17:00,Labdas,Praktikum,Tatap Muka,60
+169,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-02-13,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
+170,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-02-20,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
+171,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-02-27,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
+172,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-03-13,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
+173,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-03-20,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
+174,STI,2022,2,II2250,Manajemen Basis Data,Senin,2023-03-27,16:00,18:00,Labdas,Praktikum,Tatap Muka,175
