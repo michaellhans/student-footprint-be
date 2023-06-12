@@ -76,7 +76,7 @@ def major():
     cf_category = category_distribution(df_dates)
     cf_in_out = in_class_out_class(df_dates)
     cf_activity = activity_distribution(df_dates, df_schedule_nim)
-    cf_history = df_dates.to_dict(orient='records')
+    cf_history = df_dates.groupby('date').sum().reset_index().to_dict(orient='records')
     cf_course_distribution = get_courses_distribution(df_schedule_nim).to_dict(orient='records')
 
     # Example response
@@ -112,7 +112,7 @@ def itb():
     cf_category = category_distribution(df_dates)
     cf_in_out = in_class_out_class(df_dates)
     cf_activity = activity_distribution(df_dates, df_schedule_nim)
-    cf_history = df_dates.to_dict(orient='records')
+    cf_history = df_dates.groupby('date').sum().reset_index().to_dict(orient='records')
     cf_course_distribution = get_courses_distribution(df_schedule_nim).to_dict(orient='records')
 
     # Example response
