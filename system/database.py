@@ -9,6 +9,8 @@ SCHEDULE_PATH = "05-schedule.csv"
 PRACTICUM_PATH = "06-practicum.csv"
 CLASSROOM_EF_PATH = "07-classroom-ef.csv"
 ELECTRICITY_BILLS_PATH = "08-electricity-bills.csv"
+ITB_EMISSION_DATES = "emission-all-dates.csv"
+ITB_EMISSION_SCHEDULES = "emission-all-schedules.csv"
 
 class Database:
     def __init__(self):
@@ -20,6 +22,8 @@ class Database:
         self.df_practicum = pd.read_csv(DATA_PATH + PRACTICUM_PATH, index_col=0)
         self.df_classroom_ef = pd.read_csv(DATA_PATH + CLASSROOM_EF_PATH, index_col=0)
         self.df_electricity_bills = pd.read_csv(DATA_PATH + ELECTRICITY_BILLS_PATH, index_col=0)
+        self.master_df_dates = pd.read_csv(DATA_PATH + ITB_EMISSION_DATES, index_col=0)
+        self.master_df_schedules = pd.read_csv(DATA_PATH + ITB_EMISSION_SCHEDULES, index_col=0)
 
     def head(self, num):
         print(self.df_survey.head(num))

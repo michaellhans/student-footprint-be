@@ -234,16 +234,16 @@ def student_calculation(NIM, start_date, end_date, online_method=False):
 
 def category_distribution(df_dates):
   return {
-      "electricity": df_dates['electricity'].sum() + df_dates['outclass_emission'].sum(),  
-      "commuting": df_dates['commuting_emission'].sum(),
-      "paper": df_dates['paper'].sum(),
-      "classroom": df_dates['classroom'].sum()
+      "electricity": float(df_dates['electricity'].sum() + df_dates['outclass_emission'].sum()),  
+      "commuting": float(df_dates['commuting_emission'].sum()),
+      "paper": float(df_dates['paper'].sum()),
+      "classroom": float(df_dates['classroom'].sum())
   }
 
 def in_class_out_class(df_dates):
   return {
-      "out_class": df_dates['outclass_emission'].sum() + df_dates['commuting_emission'].sum(),  
-      "in_class": df_dates['courses_emission'].sum()
+      "out_class": float(df_dates['outclass_emission'].sum() + df_dates['commuting_emission'].sum()),  
+      "in_class": float(df_dates['courses_emission'].sum())
   }
 
 def activity_distribution(df_dates, df_schedule_nim):
@@ -260,11 +260,11 @@ def activity_distribution(df_dates, df_schedule_nim):
   df_activity = pivot_df.sum()
 
   return {
-      "electricity": df_dates['electricity'].sum() + df_dates['outclass_emission'].sum(),  
-      "commuting": df_dates['commuting_emission'].sum(),
-      "exam": df_activity.get('UTS', 0) + df_activity.get('UAS', 0),
-      "lecture": df_activity.get('Kuis', 0) + df_activity.get('Kuliah', 0),
-      "practicum": df_activity.get('Praktikum', 0)
+      "coursework": float(df_dates['outclass_emission'].sum()),  
+      "commuting": float(df_dates['commuting_emission'].sum()),
+      "exam": float(df_activity.get('UTS', 0) + df_activity.get('UAS', 0)),
+      "lecture": float(df_activity.get('Kuis', 0) + df_activity.get('Kuliah', 0)),
+      "practicum": float(df_activity.get('Praktikum', 0))
   }
 
 if __name__ == '__main__':
