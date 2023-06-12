@@ -31,7 +31,5 @@ class Database:
         print(self.df_classroom_ef.head(num))
         print(self.df_electricity_bills.head(num))
         
-    
 # Create an instance of the System class with the file paths to the dataframes
-DB = Database()
-DB.head(5)
+DB_INSTANCE = Database()

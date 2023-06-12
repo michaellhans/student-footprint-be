@@ -1,4 +1,4 @@
-import pandas as pd
+from .database import DB_INSTANCE
 
 # 1. COMMUTING EMISSION CALCULATION
 # Commuting Emission Factor
@@ -42,7 +42,7 @@ def electronic_emission(power, hours_of_use):
 
 
 # 3. CLASSROOM EMISSION CALCULATIOn
-df_classroom_ef = pd.read_csv("data/07-classroom-ef.csv")
+df_classroom_ef = DB_INSTANCE.df_classroom_ef
 room = df_classroom_ef.set_index('Room')['EF'].to_dict()
 room['-'] = room['7606']
 room['7610'] = room['7609']
