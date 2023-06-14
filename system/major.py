@@ -44,7 +44,7 @@ def prepare_predictive_dataset(df, df_schedule, df_electricity_bills, df_survey)
     dfx.fillna(0, inplace=True)
     df = pd.merge(df, df_survey[['NIM', 'day_laptop_total', 'distance']], on ='NIM')
     df = df.groupby('date').sum().reset_index()[['date', 'courses_emission', 'commuting_emission', 'outclass_emission', 'total_emission', 'online_day', 'day_laptop_total', 'distance']]
-    print(df)
+
     dfx = dfx.reset_index().rename(columns={'index': 'date'})
     df['date'] = pd.to_datetime(df['date'])
     df = pd.merge(df, dfx, on=['date'])
