@@ -89,6 +89,25 @@ The base URL for all API endpoints is: `http://127.0.0.1:5000`
   }
   ```
 
+### 4. Get CF Summary
+- URL: `/summary`
+- Method: `GET`
+- Description: Retrieve carbon footprint summary based on selected level on certain period
+- Parameters:
+  - `level` (string): 'student' or 'major'
+  - `start_date` (string): Start date of a period (YYYY-MM-DD)
+  - `end_date` (string): End date of a period (YYYY-MM-DD)
+- Example:
+  ```http
+  GET /summary HTTP/1.1
+  Host: 127.0.0.1:5000
+- Response:
+  ```
+  {
+    "data": [...CF summary per students or dates]
+  }
+  ```
+
 ## Prerequisites
 
 The following is the environment preparation needed to run the application.
