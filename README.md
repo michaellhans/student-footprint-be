@@ -1,12 +1,95 @@
-# Student Carbon Footprint Back End
+# Student Carbon Footprint API Documentation
 
-Resume Classification API to classify resumes and show some suggestions based on the job description.
+## Base URL
+The base URL for all API endpoints is: `http://127.0.0.1:5000`
 
-## Getting Started
+## Endpoints
+### 1. Get CF Information of Student with NIM
+- URL: `/student`
+- Method: `GET`
+- Description: Retrieve carbon footprint profile of  a student with a certain NIM in a certain period
+- Parameters:
+  - `NIM` (string): The NIM of the student
+  - `start_date` (string): Start date of a period (YYYY-MM-DD)
+  - `end_date` (string): End date of a period (YYYY-MM-DD)
+- Example:
+  ```http
+  GET /student HTTP/1.1
+  Host: 127.0.0.1:5000
+- Response:
+  ```
+  {
+    "data": {
+        "details": {
+            "cf_activity": ...,
+            "cf_category": ...,
+            "cf_history": [...],
+            "cf_in_out": ...
+        },
+        "end_date": "2023-02-02",
+        "start_date": "2023-01-20"
+    }
+  }
+  ```
+  
+### 2. Get CF Information of Certain Major
+- URL: `/major`
+- Method: `GET`
+- Description: Retrieve carbon footprint profile of a certain major in a certain period
+- Parameters:
+  - `major` (string): Major code (IF / STI / MIF)
+  - `start_date` (string): Start date of a period (YYYY-MM-DD)
+  - `end_date` (string): End date of a period (YYYY-MM-DD)
+- Example:
+  ```http
+  GET /major HTTP/1.1
+  Host: 127.0.0.1:5000
+- Response:
+  ```
+  {
+    "data": {
+        "details": {
+            "cf_activity": ...,
+            "cf_category": ...,
+            "cf_history": [...],
+            "cf_in_out": ...,
+            "cf_distribution": ...
+        },
+        "end_date": "2023-02-02",
+        "start_date": "2023-01-20"
+    }
+  }
+  ```
 
-The following instructions will guide you through the application installation stage and how to run it.
+### 3. Get CF Information of ITB
+- URL: `/itb`
+- Method: `GET`
+- Description: Retrieve carbon footprint profile of ITB in a certain period
+- Parameters:
+  - `start_date` (string): Start date of a period (YYYY-MM-DD)
+  - `end_date` (string): End date of a period (YYYY-MM-DD)
+- Example:
+  ```http
+  GET /itb HTTP/1.1
+  Host: 127.0.0.1:5000
+- Response:
+  ```
+  {
+    "data": {
+        "details": {
+            "cf_activity": ...,
+            "cf_category": ...,
+            "cf_history": [...],
+            "cf_in_out": ...,
+            "cf_distribution": ...
+        },
+        "end_date": "2023-02-02",
+        "start_date": "2023-01-20"
+    }
+  }
+  ```
 
-### Prerequisites
+## Prerequisites
 
 The following is the environment preparation needed to run the application.
 
@@ -15,7 +98,7 @@ The following is the environment preparation needed to run the application.
 - Python 3.9.7 for Back End
 ```
 
-### Installing
+## Installing
 
 Instalasi dilakukan dengan mengetikkan command dibawah ini.
 ```
@@ -24,13 +107,12 @@ pip install -r requirements.txt
 
 ## How to Run Program
 1. Run `python app.py` from the root directory
-2. Check the API documentation [here](https://docs.google.com/document/d/1O6zXF8STjMEs-aMxf2xVmAelooR5jwPtNQ9lwu8NA_M/edit?usp=sharing)
-3. You can use the Postman application or create simple UI to test this API
+2. You can use the Postman application or create simple UI to test this API
 
 ## Built With
 
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web Framework
-* [Python](https://www.python.org/) - Back End
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Python](https://www.python.org/)
 
 ## Authors
 
