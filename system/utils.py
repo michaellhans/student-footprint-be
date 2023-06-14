@@ -1,4 +1,8 @@
 from .database import DB_INSTANCE
+import pandas as pd
+import numpy as np
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from datetime import datetime
 
 # 1. COMMUTING EMISSION CALCULATION
 # Commuting Emission Factor
@@ -62,3 +66,23 @@ def classroom_emission(location, hours_of_use):
 paper_ef = 2.958622
 def paper_emission(num_of_paper):
   return num_of_paper / 500 * paper_ef
+
+# Calculate MAPE
+def mean_absolute_percentage_error(y_test, y_pred):
+  y_test, y_pred = np.array(y_test), np.array(y_pred)
+  return np.mean(np.abs((y_test - y_pred) / y_test)) * 100
+
+def get_forecasting_date(start_date, end_date):
+  start_date = '2023-05-10'
+  end_date = '2023-05-20'
+
+  # Convert the date strings to datetime objects
+  start_date_obj = datetime.strptime(start_date, '%Y-%m-%d')
+  end_date_obj = datetime.strptime(end_date, '%Y-%m-%d')
+
+  # Calculate the delta days
+  delta = end_date_obj - start_date_obj
+  new_end_date_obj = end_date_obj + delta
+  new_end_date = new_end_date_obj.strftime('%Y-%m-%d')
+
+  return new_end_date

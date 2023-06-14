@@ -4,7 +4,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
 from system.cf_calculation import activity_distribution, category_distribution, in_class_out_class, student_calculation
-from system.major import all_filter_period, get_courses_distribution, major_filter_period
+from system.major import all_filter_period, fit_and_predict, get_courses_distribution, major_filter_period, df_predictive
+from system.utils import *
 
 # Get the parent directory of 'app.py'
 parent_dir = os.path.dirname(os.path.abspath(__file__))
@@ -112,7 +113,23 @@ def itb():
     cf_category = category_distribution(df_dates)
     cf_in_out = in_class_out_class(df_dates)
     cf_activity = activity_distribution(df_dates, df_schedule_nim)
-    cf_history = df_dates.groupby('date').sum().reset_index().to_dict(orient='records')
+
+    # Predictive modeling
+    y_pred, y_test = fit_and_predict(df_predictive, start_date, end_date)
+    mae = mean_absolute_error(y_test, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+    mape = mean_absolute_percentage_error(y_test, y_pred)
+    print(len(y_test))
+    print(len(y_pred))
+    y_test = y_test.reset_index(name='real')
+    y_test['predicted_emission'] = y_pred
+    df_model = df_dates.groupby('date').sum().reset_index()
+    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
+    cf_history = df_model.to_dict(orient='records')
+
+    print(df_model[['total_emission', 'predicted_emission']])
+
     cf_course_distribution = get_courses_distribution(df_schedule_nim).to_dict(orient='records')
 
     # Example response
