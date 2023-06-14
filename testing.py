@@ -23,10 +23,10 @@ def overall_pipeline(start_date, end_date):
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
     df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
-    cf_history = df_model.to_dict(orient='records')
+    cf_history = df_model[['date', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     # Debugging purpose: show all regression test parameters
-    print(df_model[['total_emission', 'predicted_emission']].head(1))
+    print(df_model.head(1))
     print("MAE:", mae)
     print("RMSE:", rmse)
     print("R2 Score:", r2)
@@ -73,10 +73,10 @@ def major_pipeline(major, start_date, end_date):
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
     df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
-    cf_history = df_model.to_dict(orient='records')
+    cf_history = df_model[['date', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     # Debugging purpose: show all regression test parameters
-    print(df_model[['total_emission', 'predicted_emission']].head(1))
+    print(df_model.head(1))
     print("MAE:", mae)
     print("RMSE:", rmse)
     print("R2 Score:", r2)
@@ -122,10 +122,10 @@ def student_pipeline(NIM, start_date, end_date):
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
     df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
-    cf_history = df_model.to_dict(orient='records')
+    cf_history = df_model[['date', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     # Debugging purpose: show all regression test parameters
-    print(df_model[['total_emission', 'predicted_emission']].head(1))
+    print(df_model.head(1))
     print("MAE:", mae)
     print("RMSE:", rmse)
     print("R2 Score:", r2)
