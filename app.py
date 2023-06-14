@@ -3,7 +3,7 @@ import sys
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 from system.utils import *
-from testing import major_pipeline, overall_pipeline, student_pipeline
+from testing import major_pipeline, major_summary, overall_pipeline, student_pipeline, students_summary
 
 # Get the parent directory of 'app.py'
 parent_dir = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +65,27 @@ def itb():
     debugging_api("itb", start_date, end_date)
 
     payload = overall_pipeline(start_date, end_date)
+    response = jsonify({'data': payload})
+
+    return response
+
+# Route to retrieve carbon footprint summary
+@app.route('/summary', methods=['GET'])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
+def summary():
+    level = request.args.get('level')
+    start_date = request.args.get('start_date')
+    end_date = request.args.get('end_date')
+    
+    # Debugging purpose
+    debugging_api(level, start_date, end_date)
+
+    payload = None
+    if (level == 'student'):
+        payload = students_summary(start_date, end_date)
+    else:
+        payload = major_summary(start_date, end_date)
+
     response = jsonify({'data': payload})
 
     return response
