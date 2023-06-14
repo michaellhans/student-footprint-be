@@ -1,5 +1,4 @@
 import pandas as pd
-from datetime import datetime, timedelta
 from .utils import *
 from .database import DB_INSTANCE
 from sklearn.linear_model import LinearRegression
@@ -16,6 +15,7 @@ code = {
     "MIF": "235"
 }
 
+# Filter the master_df_schedules and master_df_dates by major, start_date, and end_date
 def major_filter_period(major, start_date, end_date):
     df_schedule_filtered = master_df_schedules[(master_df_schedules['NIM'].astype(str).str.startswith(code[major])) &
         (master_df_schedules['date'] >= start_date) & (master_df_schedules['date'] <= end_date)].copy()
@@ -23,16 +23,19 @@ def major_filter_period(major, start_date, end_date):
         (master_df_dates['date'] >= start_date) & (master_df_dates['date'] <= end_date)].copy()
     return df_schedule_filtered, df_dates_filtered
 
+# Filter the master_df_schedules and master_df_dates by start_date and end_date
 def all_filter_period(start_date, end_date):
     df_schedule_filtered = master_df_schedules[(master_df_schedules['date'] >= start_date) & (master_df_schedules['date'] <= end_date)].copy()
     df_dates_filtered = master_df_dates[(master_df_dates['date'] >= start_date) & (master_df_dates['date'] <= end_date)].copy()
     return df_schedule_filtered, df_dates_filtered
 
+# Get courses emission distribution
 def get_courses_distribution(df_schedules):
     dfx = df_schedules.groupby('course_id')['emission'].sum().reset_index().sort_values(by='emission', ascending=False)
     dfx = pd.merge(dfx, df_courses[["course_id", "course_name", "exam_paper_based", "class_electronic"]], on ='course_id')
     return dfx
 
+# Prepare the predictive dataset for predictive analytics modeling
 def prepare_predictive_dataset(df, df_schedule, df_electricity_bills, df_survey):
     dfx = pd.DataFrame(index=df_schedule['date'].unique()).sort_index()
     dfx['total_classes'] = df_schedule.groupby('date')['key'].nunique()
@@ -68,7 +71,7 @@ def prepare_predictive_dataset(df, df_schedule, df_electricity_bills, df_survey)
 
     return df
 
-
+# Create the predictive analytics or use the existing one and predict the testing data
 def fit_and_predict(df, start_date, end_date, option=None):
     # Create lagged versions of the variables with three lags
     lags = 30

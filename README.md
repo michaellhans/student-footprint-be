@@ -100,7 +100,7 @@ The following is the environment preparation needed to run the application.
 
 ## Installing
 
-Instalasi dilakukan dengan mengetikkan command dibawah ini.
+You can install all prerequisites package by run this command in the root directory.
 ```
 pip install -r requirements.txt
 ```
