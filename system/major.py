@@ -1,8 +1,9 @@
 import pandas as pd
 from .utils import *
 from .database import DB_INSTANCE
-from sklearn.linear_model import LinearRegression
+from sklearn.svm import SVR
 from datetime import datetime
+from sklearn.preprocessing import StandardScaler
 
 # GLOBAL VARIABLE ACCESSED FROM DB
 master_df_dates = DB_INSTANCE.master_df_dates
@@ -101,16 +102,24 @@ def fit_and_predict(df, start_date, end_date, option=None):
     y = lagged_data[columns[0]]  # Example: Using first column (total emission) as the target variable
 
     # Split the data into training and testing sets (e.g., 70% for training, 20% for testing)
+    original_index = X.index
+    sc_X = StandardScaler().fit(X)
+    sc_y = StandardScaler().fit(np.array(y).reshape(-1, 1))
+
     train_size = int(len(X) * 0.7)
     X_train = X[:train_size]
     y_train = y[:train_size]
     X_test = X[(X.index >= start_date) & (X.index <= end_date)]
     y_test = y[(y.index >= start_date) & (y.index <= end_date)]
 
-    model = DB_INSTANCE.itb_model
     if (option == "student"):
-        model = LinearRegression().fit(X_train, y_train)
+        X_train = sc_X.transform(X_train)
+        X_test = sc_X.transform(X_test)
+        y_train = sc_y.transform(np.array(y_train).reshape(-1, 1))
+        model = SVR(kernel = 'linear')
+        model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
+        y_pred = sc_y.inverse_transform(y_pred.reshape(-1, 1))
         return y_test, y_pred
     
     else:
@@ -120,8 +129,10 @@ def fit_and_predict(df, start_date, end_date, option=None):
             model = DB_INSTANCE.sti_model
         elif (option == "MIF"):
             model = DB_INSTANCE.mif_model
+        else:
+            model = DB_INSTANCE.itb_model
 
-        X_test = DB_INSTANCE.sc_X.transform(X_test)
+        X_test = sc_X.transform(X_test)
         y_pred = model.predict(X_test)
-        y_pred = DB_INSTANCE.sc_y.inverse_transform(y_pred.reshape(-1, 1))
+        y_pred = sc_y.inverse_transform(y_pred.reshape(-1, 1))
         return y_test, y_pred

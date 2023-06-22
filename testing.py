@@ -59,13 +59,13 @@ def overall_pipeline(start_date, end_date):
     cf_profile['most_mode_transportation'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])].groupby(['mode_transportation']).size().to_dict()
 
     major_list = ['IF', 'STI', 'MIF']
-    # for major in major_list:
-    #     _, major_dates = major_filter_period(major, start_date, end_date)
-    #     major_profile = {}
-    #     major_profile['num_of_students'] = major_dates['NIM'].nunique()
-    #     major_profile['total_cf'] = major_dates['total_emission'].sum()
-    #     major_profile['avg_cf_students'] = major_dates['total_emission'].sum() / major_profile['num_of_students']
-    #     cf_profile[major] = major_profile
+    for major in major_list:
+        _, major_dates = major_filter_period(major, start_date, end_date)
+        major_profile = {}
+        major_profile['num_of_students'] = major_dates['NIM'].nunique()
+        major_profile['total_cf'] = major_dates['total_emission'].sum()
+        major_profile['avg_cf_students'] = major_dates['total_emission'].sum() / major_profile['num_of_students']
+        cf_profile[major] = major_profile
 
     green_action = {}
     green_action['walking'] = df_dates['total_emission'].sum() - df_dates['commuting_emission'].sum()
@@ -199,7 +199,7 @@ def student_pipeline(NIM, start_date, end_date):
     green_action['carpool'] = df_dates['total_emission'].sum() - (df_dates['commuting_emission'].sum() / 4)
 
     # Debugging purpose: show all regression test parameters
-    print(df_model.head(1))
+    print(df_model.head(10))
     print("MAE:", mae)
     print("RMSE:", rmse)
     print("R2 Score:", r2)
