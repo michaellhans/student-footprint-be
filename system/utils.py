@@ -86,3 +86,15 @@ def debugging_api(entity, start_date, end_date):
     print(entity, end="; ")
     print("Start Date:", start_date, end="; ")
     print("End Date:", end_date)
+
+def is_holiday(date):
+    if date in DB_INSTANCE.id_holidays:
+        return True
+    else:
+        return False
+
+def is_pandemic(date):
+  if (date.year < 2023):
+    return True
+  else:
+    return False

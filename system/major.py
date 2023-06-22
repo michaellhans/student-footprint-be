@@ -2,6 +2,7 @@ import pandas as pd
 from .utils import *
 from .database import DB_INSTANCE
 from sklearn.linear_model import LinearRegression
+from datetime import datetime
 
 # GLOBAL VARIABLE ACCESSED FROM DB
 master_df_dates = DB_INSTANCE.master_df_dates
@@ -66,7 +67,19 @@ def prepare_predictive_dataset(df, df_schedule, df_electricity_bills, df_survey)
     df = df.resample('1D').mean()
     df = df.interpolate(option='spline')
 
-    select_cols = ['total_emission', 'online_day', 'day_laptop_total', 'distance', 'kWh_day', 'total_classes', 'online_classes', 'offline_classes', 'students_attends', 'is_exam_period']
+    # Temp, isPandemic, and isHoliday attribute
+    df = df.reset_index().rename(columns={'index': 'date'})
+    df['is_pandemic'] = df['date'].apply(lambda x: is_pandemic(x))
+    df['is_holiday'] = df['date'].apply(lambda x: is_holiday(x))
+    df = pd.merge(df, DB_INSTANCE.df_weather, on=['date'], how='left')
+    df = df.fillna(df.mean())
+    df = df.set_index(df.columns[0])
+    df = df.rename(columns={'online_day': 'online_attends'})
+
+    select_cols = ['total_emission', 'day_laptop_total', 'distance', 'total_classes', 'online_classes',
+               'offline_classes', 'students_attends', 'online_attends', 'kWh_day', 'is_exam_period',
+               'is_pandemic', 'is_holiday', 'temperature', 'wind', 'humidity']
+
     df = df[select_cols]
 
     return df
@@ -87,24 +100,28 @@ def fit_and_predict(df, start_date, end_date, option=None):
     X = lagged_data.drop(['total_emission'], axis=1)
     y = lagged_data[columns[0]]  # Example: Using first column (total emission) as the target variable
 
-    # Split the data into training and testing sets (e.g., 80% for training, 20% for testing)
-    train_size = int(len(X) * 0.8)
+    # Split the data into training and testing sets (e.g., 70% for training, 20% for testing)
+    train_size = int(len(X) * 0.7)
     X_train = X[:train_size]
     y_train = y[:train_size]
     X_test = X[(X.index >= start_date) & (X.index <= end_date)]
     y_test = y[(y.index >= start_date) & (y.index <= end_date)]
 
     model = DB_INSTANCE.itb_model
-    if (option == "IF"):
-        model = DB_INSTANCE.if_model
-    elif (option == "STI"):
-        model = DB_INSTANCE.sti_model
-    elif (option == "MIF"):
-        model = DB_INSTANCE.mif_model
-    elif (option == "student"):
+    if (option == "student"):
         model = LinearRegression().fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        return y_test, y_pred
+    
+    else:
+        if (option == "IF"):
+            model = DB_INSTANCE.if_model
+        elif (option == "STI"):
+            model = DB_INSTANCE.sti_model
+        elif (option == "MIF"):
+            model = DB_INSTANCE.mif_model
 
-    y_pred = model.predict(X_test)
-
-    return y_test, y_pred
-
+        X_test = DB_INSTANCE.sc_X.transform(X_test)
+        y_pred = model.predict(X_test)
+        y_pred = DB_INSTANCE.sc_y.inverse_transform(y_pred.reshape(-1, 1))
+        return y_test, y_pred
