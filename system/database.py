@@ -21,8 +21,6 @@ ITB_MODEL = "itb-predictive-model.joblib"
 IF_MODEL = "if-predictive-model.joblib"
 STI_MODEL = "sti-predictive-model.joblib"
 MIF_MODEL = "mif-predictive-model.joblib"
-X_SCALER = "std-X-scaler.joblib";
-Y_SCALER = "std-Y-scaler.joblib";
  
 class Database:
     def __init__(self):
@@ -49,8 +47,6 @@ class Database:
         self.if_model = joblib.load(open(MODEL_PATH + IF_MODEL, 'rb'))
         self.sti_model = joblib.load(open(MODEL_PATH + STI_MODEL, 'rb'))
         self.mif_model = joblib.load(open(MODEL_PATH + MIF_MODEL, 'rb'))
-        self.sc_X = joblib.load(open(MODEL_PATH + X_SCALER, 'rb'))
-        self.sc_y = joblib.load(open(MODEL_PATH + Y_SCALER, 'rb'))
 
     def head(self, num):
         print(self.df_survey.head(num))
@@ -68,8 +64,6 @@ class Database:
         print("IF model:", self.if_model)
         print("STI model:", self.sti_model)
         print("MIF model:", self.mif_model)
-        print("Standard Scaler X:", self.sc_X)
-        print("Standard Scaler Y:", self.sc_y)
         
 # Create an instance of the System class with the file paths to the dataframes
 DB_INSTANCE = Database()

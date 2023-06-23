@@ -79,6 +79,8 @@ def get_forecasting_date(start_date, end_date):
   delta = end_date_obj - start_date_obj
   new_end_date_obj = end_date_obj + timedelta(days=delta.days)
   new_end_date = new_end_date_obj.strftime('%Y-%m-%d')
+  print(new_end_date)
+  print(end_date)
 
   return new_end_date
 
@@ -98,3 +100,5 @@ def is_pandemic(date):
     return True
   else:
     return False
+  
+code_mapping = {135: "IF", 182: "STI", 235: "MIF"}

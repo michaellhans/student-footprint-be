@@ -23,6 +23,35 @@ def major_summary(start_date, end_date):
     df_dates.fillna(0, inplace=True)
     return df_dates[['date', 'total_emission', 'IF', 'STI', 'MIF']].to_dict(orient='records')
 
+def itb_statistics(start_date, end_date):
+    _, df_dates = all_filter_period(start_date, end_date)
+    cf_profile = {}
+    major_profile = {}
+    major_profile['num_of_students'] = df_dates['NIM'].nunique()
+    major_profile['total_cf'] = df_dates['total_emission'].sum()
+    major_profile['avg_cf_students'] = df_dates['total_emission'].sum() / major_profile['num_of_students']
+    cf_profile['ITB'] = major_profile
+
+    df_dates = df_dates.groupby('date').sum().reset_index()
+    df_dates = df_dates[['date', 'total_emission']]
+    majors = ['IF', 'STI', 'MIF']
+    for major in majors:
+        _, dfx = major_filter_period(major, start_date, end_date)
+        major_profile = {}
+        major_profile['num_of_students'] = dfx['NIM'].nunique()
+        major_profile['total_cf'] = dfx['total_emission'].sum()
+        major_profile['avg_cf_students'] = dfx['total_emission'].sum() / major_profile['num_of_students']
+        cf_profile[major] = major_profile
+        dfx = dfx.groupby('date').sum().reset_index()
+        dfx = dfx.rename(columns={'total_emission': major})
+        df_dates = pd.merge(df_dates, dfx[['date', major]], on='date', how='left')
+
+    df_dates.fillna(0, inplace=True)
+    return {
+        'cf_profile': cf_profile,
+        'cf_history': df_dates[['date', 'total_emission', 'IF', 'STI', 'MIF']].to_dict(orient='records')
+    }
+
 def overall_pipeline(start_date, end_date):
     # Phase 1: Carbon Footprint Calculation
     df_schedule, df_dates = all_filter_period(start_date, end_date)
@@ -40,12 +69,19 @@ def overall_pipeline(start_date, end_date):
     mape = mean_absolute_percentage_error(y_test, y_pred)
 
     # Phase 3: Combine with the CF History
-    y_test = y_test.reset_index(name='real')
+    y_test = y_test.reset_index(name='total_emission')
     y_test['predicted_emission'] = y_pred
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
-    print(y_test.tail(10))
-    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
+    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='outer')
+    df_model.sort_values(by='date', inplace=True)
+    
+    # Filter y_test based on the date range criteria
+    filtered_y_test = y_test[(y_test['date'] >= start_date) & (y_test['date'] <= end_date)]
+
+    # Fill df_model['total_emission'] with values from filtered_y_test
+    df_model.loc[df_model['date'].isin(filtered_y_test['date']), 'total_emission'] = filtered_y_test['total_emission']
+    df_model.fillna(0, inplace=True)
     cf_history = df_model[['date', 'courses_emission', 'commuting_emission', 'outclass_emission', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     # Phase 4: ITB Profile
@@ -54,9 +90,9 @@ def overall_pipeline(start_date, end_date):
     cf_profile['total_cf'] = df_dates['total_emission'].sum()
     cf_profile['avg_cf_students'] = cf_profile['total_cf'] / cf_profile['num_of_students']
     cf_profile['avg_cf_students_daily'] = cf_profile['avg_cf_students'] / len(df_dates['date'].unique())
-    cf_profile['avg_distance'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])]['distance'].mean()
-    cf_profile['avg_laptop_usage'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])]['day_laptop_total'].mean()
-    cf_profile['most_mode_transportation'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])].groupby(['mode_transportation']).size().to_dict()
+    cf_profile['avg_distance'] = DB_INSTANCE.df_survey['distance'].mean()
+    cf_profile['avg_laptop_usage'] = DB_INSTANCE.df_survey['day_laptop_total'].mean()
+    cf_profile['most_mode_transportation'] = DB_INSTANCE.df_survey.groupby(['mode_transportation']).size().to_dict()
 
     major_list = ['IF', 'STI', 'MIF']
     for major in major_list:
@@ -70,6 +106,7 @@ def overall_pipeline(start_date, end_date):
     green_action = {}
     green_action['walking'] = df_dates['total_emission'].sum() - df_dates['commuting_emission'].sum()
     green_action['carpool'] = df_dates['total_emission'].sum() - (df_dates['commuting_emission'].sum() / 4)
+    green_action['energy_saving'] = df_dates['total_emission'].sum() - (df_dates['outclass_emission'].sum() / 2)
 
     # Debugging purpose: show all regression test parameters
     print(df_model.head(1))
@@ -87,7 +124,8 @@ def overall_pipeline(start_date, end_date):
             "cf_activity": cf_activity,
             "cf_history": cf_history,
             "cf_course_distribution": cf_course_distribution,
-            'cf_profile': cf_profile
+            'cf_profile': cf_profile,
+            "green_action": green_action
         },
     }
 
@@ -118,11 +156,19 @@ def major_pipeline(major, start_date, end_date):
     mape = mean_absolute_percentage_error(y_test, y_pred)
 
     # Phase 3: Combine with the CF History
-    y_test = y_test.reset_index(name='real')
+    y_test = y_test.reset_index(name='total_emission')
     y_test['predicted_emission'] = y_pred
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
-    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
+    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='outer')
+    df_model.sort_values(by='date', inplace=True)
+    
+    # Filter y_test based on the date range criteria
+    filtered_y_test = y_test[(y_test['date'] >= start_date) & (y_test['date'] <= end_date)]
+
+    # Fill df_model['total_emission'] with values from filtered_y_test
+    df_model.loc[df_model['date'].isin(filtered_y_test['date']), 'total_emission'] = filtered_y_test['total_emission']
+    df_model.fillna(0, inplace=True)
     cf_history = df_model[['date', 'courses_emission', 'commuting_emission', 'outclass_emission', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     # Phase 4: Major Profile
@@ -131,13 +177,21 @@ def major_pipeline(major, start_date, end_date):
     cf_profile['total_cf'] = df_dates['total_emission'].sum()
     cf_profile['avg_cf_students'] = cf_profile['total_cf'] / cf_profile['num_of_students']
     cf_profile['avg_cf_students_daily'] = cf_profile['avg_cf_students'] / len(df_dates['date'].unique())
-    cf_profile['avg_distance'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])]['distance'].mean()
-    cf_profile['avg_laptop_usage'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])]['day_laptop_total'].mean()
-    cf_profile['most_mode_transportation'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].isin(df_dates['NIM'])].groupby(['mode_transportation']).size().to_dict()
+    cf_profile['avg_distance'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].astype(str).str.startswith(code[major])]['distance'].mean()
+    cf_profile['avg_laptop_usage'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].astype(str).str.startswith(code[major])]['day_laptop_total'].mean()
+    cf_profile['most_mode_transportation'] = DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].astype(str).str.startswith(code[major])].groupby(['mode_transportation']).size().to_dict()
     
+    # _, itb_dates = all_filter_period(start_date, end_date)
+    cf_profile['comparison'] = {
+        'avg_laptop_usage': DB_INSTANCE.df_survey['day_laptop_total'].mean(),
+        'avg_distance': DB_INSTANCE.df_survey['distance'].mean(),
+        # 'avg_cf_students': itb_dates['total_emission'].sum() / itb_dates['NIM'].nunique()
+    }
+
     green_action = {}
     green_action['walking'] = df_dates['total_emission'].sum() - df_dates['commuting_emission'].sum()
     green_action['carpool'] = df_dates['total_emission'].sum() - (df_dates['commuting_emission'].sum() / 4)
+    green_action['energy_saving'] = df_dates['total_emission'].sum() - (df_dates['outclass_emission'].sum() / 2)
 
     # Debugging purpose: show all regression test parameters
     print(df_model.head(1))
@@ -155,7 +209,8 @@ def major_pipeline(major, start_date, end_date):
             "cf_activity": cf_activity,
             "cf_history": cf_history,
             "cf_course_distribution": cf_course_distribution,
-            'cf_profile': cf_profile
+            'cf_profile': cf_profile,
+            "green_action": green_action
         },
     }
 
@@ -170,6 +225,11 @@ def student_pipeline(NIM, start_date, end_date):
                    "day_laptop_total", "day_laptop_outclass", "day_phone_total", "paper_consumption",
                    "pandemic_AC_frequent", "pandemic_day_laptop_total", "pandemic_day_laptop_outclass", "pandemic_day_phone_total"]
     cf_profile = df_survey[df_survey['NIM'] == NIM].iloc[0][select_cols].to_dict()
+
+    cf_profile['comparison'] = {
+        'avg_laptop_usage': DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].astype(str).str.startswith(str(NIM)[:3])]['day_laptop_total'].mean(),
+        'avg_distance': DB_INSTANCE.df_survey[DB_INSTANCE.df_survey['NIM'].astype(str).str.startswith(str(NIM)[:3])]['distance'].mean(),
+    }
 
     # Phase 2a: Predictive Modeling Preparation
     master_df_schedules = DB_INSTANCE.master_df_schedules
@@ -187,16 +247,25 @@ def student_pipeline(NIM, start_date, end_date):
     mape = mean_absolute_percentage_error(y_test, y_pred)
 
     # Phase 3: Combine with the CF History
-    y_test = y_test.reset_index(name='real')
+    y_test = y_test.reset_index(name='total_emission')
     y_test['predicted_emission'] = y_pred
     df_model = df_dates.groupby('date').sum().reset_index()
     y_test['date'] = y_test['date'].dt.strftime('%Y-%m-%d')
-    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='left')
+    df_model = pd.merge(df_model, y_test[['date', 'predicted_emission']], how='outer')
+    df_model.sort_values(by='date', inplace=True)
+
+    # Filter y_test based on the date range criteria
+    filtered_y_test = y_test[(y_test['date'] >= start_date) & (y_test['date'] <= end_date)]
+
+    # Fill df_model['total_emission'] with values from filtered_y_test
+    df_model.loc[df_model['date'].isin(filtered_y_test['date']), 'total_emission'] = filtered_y_test['total_emission']
+    df_model.fillna(0, inplace=True)
     cf_history = df_model[['date', 'courses_emission', 'commuting_emission', 'outclass_emission', 'total_emission', 'predicted_emission']].to_dict(orient='records')
 
     green_action = {}
     green_action['walking'] = df_dates['total_emission'].sum() - df_dates['commuting_emission'].sum()
     green_action['carpool'] = df_dates['total_emission'].sum() - (df_dates['commuting_emission'].sum() / 4)
+    green_action['energy_saving'] = df_dates['total_emission'].sum() - (df_dates['outclass_emission'].sum() / 2)
 
     # Debugging purpose: show all regression test parameters
     print(df_model.head(10))
@@ -213,7 +282,8 @@ def student_pipeline(NIM, start_date, end_date):
             "cf_in_out": cf_in_out,
             "cf_activity": cf_activity,
             "cf_history": cf_history,
-            "cf_profile": cf_profile
+            "cf_profile": cf_profile,
+            "green_action": green_action
         }
     }
 

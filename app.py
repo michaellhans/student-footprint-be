@@ -3,7 +3,7 @@ import sys
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 from system.utils import *
-from testing import major_pipeline, major_summary, overall_pipeline, student_pipeline, students_summary
+from testing import itb_statistics, major_pipeline, major_summary, overall_pipeline, student_pipeline, students_summary
 
 # Get the parent directory of 'app.py'
 parent_dir = os.path.dirname(os.path.abspath(__file__))
@@ -83,6 +83,8 @@ def summary():
     payload = None
     if (level == 'student'):
         payload = students_summary(start_date, end_date)
+    elif (level == 'stats'):
+        payload = itb_statistics(start_date, end_date)
     else:
         payload = major_summary(start_date, end_date)
 
