@@ -109,7 +109,8 @@ def overall_pipeline(start_date, end_date):
     green_action['energy_saving'] = df_dates['total_emission'].sum() - (df_dates['outclass_emission'].sum() / 2)
 
     # Debugging purpose: show all regression test parameters
-    print(df_model.head(1))
+    # print(df_model.head(1))
+    print(df_model.tail(10))
     print("MAE:", mae)
     print("RMSE:", rmse)
     print("R2 Score:", r2)
@@ -255,6 +256,7 @@ def student_pipeline(NIM, start_date, end_date):
     df_model.sort_values(by='date', inplace=True)
 
     # Filter y_test based on the date range criteria
+    df_model['total_emission'] = y_test['total_emission']
     filtered_y_test = y_test[(y_test['date'] >= start_date) & (y_test['date'] <= end_date)]
 
     # Fill df_model['total_emission'] with values from filtered_y_test
